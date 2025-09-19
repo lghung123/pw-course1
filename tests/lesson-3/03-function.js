@@ -15,7 +15,7 @@ function findMin(a, b, c) {
         return b;
     }
     if (a < b) {
-        if (c < a) {
+        if (c > a) {
             return c;
         }
         return a;
