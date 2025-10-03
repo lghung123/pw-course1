@@ -1,6 +1,6 @@
 import { test } from '@playwright/test';
 
-test('Register account successfully', async ({page}) => {
+test('Register account successfully', async ({ page }) => {
     await test.step('Navigate to Register page', async () => {
         await page.goto('https://material.playwrightvn.com/');
         await page.click("//a[text()='Bài học 1: Register Page (có đủ các element)']");
@@ -15,11 +15,13 @@ test('Register account successfully', async ({page}) => {
         await page.locator("//select[@id ='country']").selectOption('usa');
         await page.locator("//input[@id ='dob']").pressSequentially('20071998');
         await page.locator("//input[@id ='profile']").setInputFiles("pw-course/tests/lesson-5/data.txt");
-        await page.locator("//textarea[@id ='bio']").fill('Lorem ipsum dolor sit amet, consectetur adipiscing elit.');
+        await page.locator("//textarea[@id ='bio']").fill('I am a manual tester');
         await page.locator("//input[@id ='rating']").fill('7');
         await page.locator("//input[@id='favcolor']").fill('#123da1');
         await page.locator("//div[contains(text(), 'Hover over me')]").hover();
         await page.locator("//input[@id='newsletter']").check();
+        await page.locator("//input[@id='toggleOption']").check();
+        await page.locator("//div[@id='starRating']").fill('10');
         await page.locator("//input[@id='customDate']").pressSequentially('29092025');
     });
 
